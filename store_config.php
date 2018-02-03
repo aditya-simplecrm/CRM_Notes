@@ -1,11 +1,6 @@
 <?php
-		// include('custom/include/mpdf60/mpdf.php');
-		// $contents = file_get_contents ("custom/modules/scrm_Payment/receipt.html");
-		// $mpdf=new mPDF();
-		// $mpdf->WriteHTML($contents);
-		// $mpdf->shrink_tables_to_fit = 1;
-		// $mpdf->shrink_tables_to_fit = 1;
-	 //    $mpdf->Output('receipt.pdf','D');
+		// store data in config file
+
 		ini_set('display_errors', 'On');
 		global $sugar_config, $db;
 		// print_r($db);
