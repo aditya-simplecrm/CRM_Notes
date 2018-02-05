@@ -294,3 +294,14 @@ http://161.202.21.7/asci/portal/public/password/reset/0195cb88c27829c2b27a5e12be
  	}
 
 ********************************************************************************************************************
+
+//hide subpanel from detail view
+
+
+//go to /custom/modules/Accounts/Ext/Layoutdefs/ and add a new file here with below code
+<?php
+unset($layout_defs["Opportunities"]["subpanel_setup"]['contacts']);
+unset($layout_defs["Opportunities"]["subpanel_setup"]['opportunity_aos_quotes']);
+// unset($layout_defs["Opportunities"]["subpanel_setup"]['quotes']);
+
+********************************************************************************************************************
