@@ -305,3 +305,59 @@ unset($layout_defs["Opportunities"]["subpanel_setup"]['opportunity_aos_quotes'])
 // unset($layout_defs["Opportunities"]["subpanel_setup"]['quotes']);
 
 ********************************************************************************************************************
+
+
+//Make the Account or Contact optional when converting a Lead in SuiteCRM
+
+/*
+  Go to your SuiteCRM_ROOT/modules/Leads/metadata
+
+  Open convertdefs.php in your text editor.
+
+  If you want to make Contact as optional, go to approximately Line 40 where you will see a code for “$viewdefs[‘Contacts’][‘ConvertLead’]”. On Line 42, change “‘required’ => true,” to “‘required’ => false,” and you are done.
+
+  If you want to make Account as optional, go to approximately Line 104 where you will see a code for “$viewdefs[‘Accounts’][‘ConvertLead’]”. On Line 106, change “‘required’ => true,” to “‘required’ => false,” and you are done.
+*/
+
+********************************************************************************************************************
+
+// To add custom fields to duplicate check in Leads module
+
+/*
+    Change the query in LeadFormBase.php
+
+    Also you need to make changes in include/SugarObjects/forms/PersonFormBase.php
+
+    PersonFormBase.php file has checkForDuplicates method. Change this method according to your requirment. 
+
+    To add fields in the table header, you will have add labels to language file in custom/modules/Leads/languages folder. You will have to add label in below format
+
+    1) db_field_name
+    2) LBL_LIST_field_name
+
+    Now repair and rebuild
+
+*/
+
+********************************************************************************************************************
+
+// To open subpanel form as a full form
+
+
+
+  // Create or modify the file "custom/Extension/modules/Accounts/Ext/Layoutdefs/hideSelectContacts.php" as follows: 
+  
+  //here you have to change widget_class value to SubPanelTopCreateButton
+    <?php
+
+      $layout_defs["Accounts"]["subpanel_setup"]["contacts"]["top_buttons"] = array(
+          array(
+              'widget_class' => 'SubPanelTopCreateButton',
+          ),
+      );
+  
+  //Navigate to Admin > Repair and click "Quick Repair and Rebuild".
+
+ 
+ ********************************************************************************************************************
+
