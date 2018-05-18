@@ -359,5 +359,12 @@ unset($layout_defs["Opportunities"]["subpanel_setup"]['opportunity_aos_quotes'])
   //Navigate to Admin > Repair and click "Quick Repair and Rebuild".
 
  
- ********************************************************************************************************************
+********************************************************************************************************************
 
+//Adding a custom scheduler
+
+Please follow below link: 
+
+http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.5/Application_Framework/Job_Queue/Schedulers/Custom_Schedulers/
+
+********************************************************************************************************************
