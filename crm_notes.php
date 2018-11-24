@@ -368,3 +368,33 @@ Please follow below link:
 http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.5/Application_Framework/Job_Queue/Schedulers/Custom_Schedulers/
 
 ********************************************************************************************************************
+	
+// Relate field event listner
+YAHOO.util.Event.onDOMReady(function(){
+	console.log('asdasd')
+    YAHOO.util.Event.addListener('port_moves_c', 'change', function(){
+			var port_id = $('#scrm_port_moves_id_c').val();
+			console.log('port_id: '+port_id)
+			if(port_id !='')
+			{
+
+				$.ajax({
+						url:'autopopulate.php', // root file
+									type: 'GET',
+									async: false,
+									data:
+									{
+										port_id:port_id,
+									},
+								success:function(data) {
+									response =data;
+									//console.log(response);
+									$('#load_country').val(response);
+
+							}
+				});
+
+			}    
+
+    });
+});
